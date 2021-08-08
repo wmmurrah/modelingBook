@@ -1,0 +1,10 @@
+fig:nice-fig
+tab:nice-tab
+intro
+outline-of-the-book
+literature
+methods
+applications
+example-one
+example-two
+final-words
