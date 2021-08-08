@@ -1,7 +1,8 @@
 fig:nice-fig
 tab:nice-tab
-intro
 outline-of-the-book
+intro
+outline-of-the-book-1
 literature
 methods
 applications
