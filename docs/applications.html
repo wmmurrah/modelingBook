@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Applications | Modeling in Education, and Social Sciences Using R</title>
+  <title>Chapter 5 Applications | Modeling in Education, and Social Sciences Using R</title>
   <meta name="description" content="This book is aimed at helping social scientists learn modeling using R" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Applications | Modeling in Education, and Social Sciences Using R" />
+  <meta property="og:title" content="Chapter 5 Applications | Modeling in Education, and Social Sciences Using R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Applications | Modeling in Education, and Social Sciences Using R" />
+  <meta name="twitter:title" content="Chapter 5 Applications | Modeling in Education, and Social Sciences Using R" />
   
   <meta name="twitter:description" content="This book is aimed at helping social scientists learn modeling using R" />
   
@@ -24,16 +24,16 @@
 <meta name="author" content="William M. Murrah" />
 
 
-<meta name="date" content="2021-08-08" />
+<meta name="date" content="2021-08-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="methods.html"/>
+<link rel="prev" href="model-evaluation.html"/>
 <link rel="next" href="final-words.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -159,23 +159,55 @@ div.csl-indent {
 <li><a href="./">MESSuR</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Simple Models</a></li>
+<li class="chapter" data-level="2" data-path="sampling-distributions-and-statistical-inference.html"><a href="sampling-distributions-and-statistical-inference.html"><i class="fa fa-check"></i><b>2</b> Sampling Distributions and Statistical Inference</a></li>
+<li class="chapter" data-level="3" data-path="simple-regression.html"><a href="simple-regression.html"><i class="fa fa-check"></i><b>3</b> Simple Regression</a></li>
+<li class="chapter" data-level="4" data-path="model-evaluation.html"><a href="model-evaluation.html"><i class="fa fa-check"></i><b>4</b> Model Evaluation</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#outline-of-the-book"><i class="fa fa-check"></i><b>0.1</b> Outline of the Book</a></li>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#outline-of-the-book-1"><i class="fa fa-check"></i><b>1.1</b> Outline of the Book</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>2</b> Literature</a></li>
-<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a></li>
-<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
-<li class="chapter" data-level="4.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="7" data-path="singlecat.html"><a href="singlecat.html"><i class="fa fa-check"></i><b>7</b> Models with Single Categorical Predictor</a></li>
+<li class="chapter" data-level="8" data-path="multicat.html"><a href="multicat.html"><i class="fa fa-check"></i><b>8</b> Models with Multiple Categorical Predictors</a></li>
+<li class="chapter" data-level="9" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>9</b> Models with Continuous and Categorical Predictors</a></li>
+<li class="chapter" data-level="10" data-path="nonindependent.html"><a href="nonindependent.html"><i class="fa fa-check"></i><b>10</b> Models with Nonindependent Errors</a></li>
+<li class="chapter" data-level="11" data-path="incorporating-predictors-with-nonindependent-data.html"><a href="incorporating-predictors-with-nonindependent-data.html"><i class="fa fa-check"></i><b>11</b> Incorporating Predictors with Nonindependent Data</a></li>
+<li class="chapter" data-level="12" data-path="logistic-models-for-categorical-dependent-variables.html"><a href="logistic-models-for-categorical-dependent-variables.html"><i class="fa fa-check"></i><b>12</b> Logistic Models for Categorical Dependent Variables</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="13" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html"><i class="fa fa-check"></i><b>13</b> R as a Statistical Programming Language</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#overview"><i class="fa fa-check"></i><b>13.1</b> Overview</a></li>
+<li class="chapter" data-level="13.2" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#overview-1"><i class="fa fa-check"></i><b>13.2</b> Overview</a></li>
+<li class="chapter" data-level="13.3" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#computers-and-programs"><i class="fa fa-check"></i><b>13.3</b> Computers and Programs</a></li>
+<li class="chapter" data-level="13.4" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#statistical-programs-versus-statistical-programming-language"><i class="fa fa-check"></i><b>13.4</b> Statistical Programs versus Statistical Programming Language</a></li>
+<li class="chapter" data-level="13.5" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#basic-elements-of-a-good-spl"><i class="fa fa-check"></i><b>13.5</b> Basic Elements of a Good SPL</a></li>
+<li class="chapter" data-level="13.6" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#expressions"><i class="fa fa-check"></i><b>13.6</b> Expressions</a></li>
+<li class="chapter" data-level="13.7" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#primitive-expressions"><i class="fa fa-check"></i><b>13.7</b> Primitive Expressions</a></li>
+<li class="chapter" data-level="13.8" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#primitive-expressions-1"><i class="fa fa-check"></i><b>13.8</b> Primitive Expressions</a></li>
+<li class="chapter" data-level="13.9" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#primitive-data-types"><i class="fa fa-check"></i><b>13.9</b> Primitive Data Types:</a></li>
+<li class="chapter" data-level="13.10" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#primitive-functions"><i class="fa fa-check"></i><b>13.10</b> Primitive Functions</a></li>
+<li class="chapter" data-level="13.11" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#programming-languages-are-not-forgiving"><i class="fa fa-check"></i><b>13.11</b> Programming Languages are Not Forgiving</a></li>
+<li class="chapter" data-level="13.12" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#programming-languages-are-not-forgiving-1"><i class="fa fa-check"></i><b>13.12</b> Programming Languages are Not Forgiving</a></li>
+<li class="chapter" data-level="13.13" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#assignment"><i class="fa fa-check"></i><b>13.13</b> Assignment</a></li>
+<li class="chapter" data-level="13.14" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#combining-expressions"><i class="fa fa-check"></i><b>13.14</b> Combining Expressions</a></li>
+<li class="chapter" data-level="13.15" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#complex-data-types"><i class="fa fa-check"></i><b>13.15</b> Complex Data Types</a></li>
+<li class="chapter" data-level="13.16" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#grouping-homogeneous-data-types"><i class="fa fa-check"></i><b>13.16</b> Grouping Homogeneous Data Types</a></li>
+<li class="chapter" data-level="13.17" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#complex-functions"><i class="fa fa-check"></i><b>13.17</b> Complex Functions</a></li>
+<li class="chapter" data-level="13.18" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#abstraction"><i class="fa fa-check"></i><b>13.18</b> Abstraction</a></li>
+<li class="chapter" data-level="13.19" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#abstraction-1"><i class="fa fa-check"></i><b>13.19</b> Abstraction</a></li>
+<li class="chapter" data-level="13.20" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#data-abstraction"><i class="fa fa-check"></i><b>13.20</b> Data Abstraction</a></li>
+<li class="chapter" data-level="13.21" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#functional-abstraction"><i class="fa fa-check"></i><b>13.21</b> Functional Abstraction</a></li>
+<li class="chapter" data-level="13.22" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#anatomy-of-a-function"><i class="fa fa-check"></i><b>13.22</b> Anatomy of a Function</a></li>
+<li class="chapter" data-level="13.23" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#teaching-with-a-statistical-programming-language"><i class="fa fa-check"></i><b>13.23</b> Teaching With A Statistical Programming Language</a>
+<ul>
+<li class="chapter" data-level="13.23.1" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#an-example"><i class="fa fa-check"></i><b>13.23.1</b> An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="13.24" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#mymean"><i class="fa fa-check"></i><b>13.24</b> myMean</a></li>
+<li class="chapter" data-level="13.25" data-path="r-as-a-statistical-programming-language.html"><a href="r-as-a-statistical-programming-language.html#basic-elements-of-a-good-spl-1"><i class="fa fa-check"></i><b>13.25</b> Basic Elements of a Good SPL</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -196,14 +228,14 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="applications" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Applications</h1>
+<div id="applications" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Applications</h1>
 <p>Some <em>significant</em> applications are demonstrated in this chapter.</p>
-<div id="example-one" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Example one</h2>
+<div id="example-one" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Example one</h2>
 </div>
-<div id="example-two" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Example two</h2>
+<div id="example-two" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Example two</h2>
 
 </div>
 </div>
@@ -212,7 +244,7 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="model-evaluation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="final-words.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

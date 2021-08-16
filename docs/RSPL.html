@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A Appendix A: R as a Statistical Programming Language | Modeling in Education, and Social Sciences Using R</title>
+  <meta name="description" content="This book is aimed at helping social scientists learn modeling using R" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="A Appendix A: R as a Statistical Programming Language | Modeling in Education, and Social Sciences Using R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book is aimed at helping social scientists learn modeling using R" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Appendix A: R as a Statistical Programming Language | Modeling in Education, and Social Sciences Using R" />
+  
+  <meta name="twitter:description" content="This book is aimed at helping social scientists learn modeling using R" />
+  
+
+<meta name="author" content="William M. Murrah" />
+
+
+<meta name="date" content="2021-08-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="references.html"/>
+
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MESSuR</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Simple Models</a></li>
+<li class="chapter" data-level="2" data-path="sampdist.html"><a href="sampdist.html"><i class="fa fa-check"></i><b>2</b> Sampling Distributions and Statistical Inference</a></li>
+<li class="chapter" data-level="3" data-path="simple.html"><a href="simple.html"><i class="fa fa-check"></i><b>3</b> Simple Regression</a></li>
+<li class="chapter" data-level="4" data-path="modeleval.html"><a href="modeleval.html"><i class="fa fa-check"></i><b>4</b> Model Evaluation</a></li>
+<li class="chapter" data-level="5" data-path="multiple.html"><a href="multiple.html"><i class="fa fa-check"></i><b>5</b> Models with Multiple Categorical Predictors</a></li>
+<li class="chapter" data-level="6" data-path="Interaction.html"><a href="Interaction.html"><i class="fa fa-check"></i><b>6</b> Moderation and Nonlinear Models</a></li>
+<li class="chapter" data-level="7" data-path="singlecat.html"><a href="singlecat.html"><i class="fa fa-check"></i><b>7</b> Models with Single Categorical Predictor</a></li>
+<li class="chapter" data-level="8" data-path="multicat.html"><a href="multicat.html"><i class="fa fa-check"></i><b>8</b> Models with Multiple Categorical Predictors</a></li>
+<li class="chapter" data-level="9" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>9</b> Models with Continuous and Categorical Predictors</a></li>
+<li class="chapter" data-level="10" data-path="nonindependent.html"><a href="nonindependent.html"><i class="fa fa-check"></i><b>10</b> Models with Nonindependent Errors</a></li>
+<li class="chapter" data-level="11" data-path="incorporating-predictors-with-nonindependent-data.html"><a href="incorporating-predictors-with-nonindependent-data.html"><i class="fa fa-check"></i><b>11</b> Incorporating Predictors with Nonindependent Data</a></li>
+<li class="chapter" data-level="12" data-path="logistic-models-for-categorical-dependent-variables.html"><a href="logistic-models-for-categorical-dependent-variables.html"><i class="fa fa-check"></i><b>12</b> Logistic Models for Categorical Dependent Variables</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="RSPL.html"><a href="RSPL.html"><i class="fa fa-check"></i><b>A</b> Appendix A: R as a Statistical Programming Language</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="RSPL.html"><a href="RSPL.html#overview"><i class="fa fa-check"></i><b>A.1</b> Overview</a></li>
+<li class="chapter" data-level="A.2" data-path="RSPL.html"><a href="RSPL.html#elements-of-statistical-programming"><i class="fa fa-check"></i><b>A.2</b> Elements of Statistical Programming</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="RSPL.html"><a href="RSPL.html#basic-elements-of-a-good-spl"><i class="fa fa-check"></i><b>A.2.1</b> Basic Elements of a Good SPL</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="RSPL.html"><a href="RSPL.html#expressions"><i class="fa fa-check"></i><b>A.3</b> Expressions</a></li>
+<li class="chapter" data-level="A.4" data-path="RSPL.html"><a href="RSPL.html#primitive-expressions"><i class="fa fa-check"></i><b>A.4</b> Primitive Expressions</a></li>
+<li class="chapter" data-level="A.5" data-path="RSPL.html"><a href="RSPL.html#primitive-data-types"><i class="fa fa-check"></i><b>A.5</b> Primitive Data Types:</a></li>
+<li class="chapter" data-level="A.6" data-path="RSPL.html"><a href="RSPL.html#primitive-functions"><i class="fa fa-check"></i><b>A.6</b> Primitive Functions</a>
+<ul>
+<li class="chapter" data-level="A.6.1" data-path="RSPL.html"><a href="RSPL.html#operators"><i class="fa fa-check"></i><b>A.6.1</b> Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="A.7" data-path="RSPL.html"><a href="RSPL.html#programming-languages-are-not-forgiving"><i class="fa fa-check"></i><b>A.7</b> Programming Languages are Not Forgiving</a>
+<ul>
+<li class="chapter" data-level="A.7.1" data-path="RSPL.html"><a href="RSPL.html#syntactically-valid-expressions"><i class="fa fa-check"></i><b>A.7.1</b> Syntactically valid expressions</a></li>
+<li class="chapter" data-level="A.7.2" data-path="RSPL.html"><a href="RSPL.html#semantically-valid-expressions"><i class="fa fa-check"></i><b>A.7.2</b> Semantically valid expressions</a></li>
+</ul></li>
+<li class="chapter" data-level="A.8" data-path="RSPL.html"><a href="RSPL.html#assignment"><i class="fa fa-check"></i><b>A.8</b> Assignment</a></li>
+<li class="chapter" data-level="A.9" data-path="RSPL.html"><a href="RSPL.html#combining-expressions"><i class="fa fa-check"></i><b>A.9</b> Combining Expressions</a></li>
+<li class="chapter" data-level="A.10" data-path="RSPL.html"><a href="RSPL.html#complex-data-types"><i class="fa fa-check"></i><b>A.10</b> Complex Data Types</a></li>
+<li class="chapter" data-level="A.11" data-path="RSPL.html"><a href="RSPL.html#grouping-homogeneous-data-types"><i class="fa fa-check"></i><b>A.11</b> Grouping Homogeneous Data Types</a></li>
+<li class="chapter" data-level="A.12" data-path="RSPL.html"><a href="RSPL.html#complex-functions"><i class="fa fa-check"></i><b>A.12</b> Complex Functions</a></li>
+<li class="chapter" data-level="A.13" data-path="RSPL.html"><a href="RSPL.html#abstraction"><i class="fa fa-check"></i><b>A.13</b> Abstraction</a></li>
+<li class="chapter" data-level="A.14" data-path="RSPL.html"><a href="RSPL.html#abstraction-1"><i class="fa fa-check"></i><b>A.14</b> Abstraction</a></li>
+<li class="chapter" data-level="A.15" data-path="RSPL.html"><a href="RSPL.html#data-abstraction"><i class="fa fa-check"></i><b>A.15</b> Data Abstraction</a></li>
+<li class="chapter" data-level="A.16" data-path="RSPL.html"><a href="RSPL.html#functional-abstraction"><i class="fa fa-check"></i><b>A.16</b> Functional Abstraction</a></li>
+<li class="chapter" data-level="A.17" data-path="RSPL.html"><a href="RSPL.html#anatomy-of-a-function"><i class="fa fa-check"></i><b>A.17</b> Anatomy of a Function</a></li>
+<li class="chapter" data-level="A.18" data-path="RSPL.html"><a href="RSPL.html#teaching-with-a-statistical-programming-language"><i class="fa fa-check"></i><b>A.18</b> Teaching With A Statistical Programming Language</a>
+<ul>
+<li class="chapter" data-level="A.18.1" data-path="RSPL.html"><a href="RSPL.html#an-example"><i class="fa fa-check"></i><b>A.18.1</b> An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="A.19" data-path="RSPL.html"><a href="RSPL.html#mymean"><i class="fa fa-check"></i><b>A.19</b> myMean</a></li>
+<li class="chapter" data-level="A.20" data-path="RSPL.html"><a href="RSPL.html#basic-elements-of-a-good-spl-1"><i class="fa fa-check"></i><b>A.20</b> Basic Elements of a Good SPL</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modeling in Education, and Social Sciences Using R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="RSPL" class="section level1" number="13">
+<h1><span class="header-section-number">A</span> Appendix A: R as a Statistical Programming Language</h1>
+<div id="overview" class="section level2" number="13.1">
+<h2><span class="header-section-number">A.1</span> Overview</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="RSPL.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code></pre></div>
+<ul>
+<li>Why use Statistical Programming Languages?</li>
+</ul>
+<p>Computers and Programs</p>
+<ul>
+<li>Fixed program computer
+<ul>
+<li>programs are “hard-wired” into computer</li>
+<li>calculator, stopwatch</li>
+</ul></li>
+<li>Stored program computer
+<ul>
+<li>machine stores and executes instructions</li>
+<li>most modern computers, your phone, etc.</li>
+</ul></li>
+</ul>
+<p>Statistical Programs versus Statistical Programming Language</p>
+<ul>
+<li>Statistical Programs
+<ul>
+<li>fixed menus</li>
+<li>limited procedures (at least in the menus)</li>
+<li>leads to compartmentalizing models (e.g. ANOVA, regression, GLM)</li>
+</ul></li>
+<li>Statistical Programming Languages (SPLs)
+<ul>
+<li>Turing complete: if you can create an algorithm you can program it</li>
+<li>Very flexible</li>
+<li>Integration of models: One model to rule them all!</li>
+</ul></li>
+</ul>
+<p>Everythin</p>
+</div>
+<div id="elements-of-statistical-programming" class="section level2" number="13.2">
+<h2><span class="header-section-number">A.2</span> Elements of Statistical Programming</h2>
+<div id="basic-elements-of-a-good-spl" class="section level3" number="13.2.1">
+<h3><span class="header-section-number">A.2.1</span> Basic Elements of a Good SPL</h3>
+<ol style="list-style-type: decimal">
+<li>a rich set of <strong>primitive expressions</strong></li>
+<li>mechanisms for <strong>combining expressions</strong> into more complex expressions</li>
+<li>means of <strong>abstraction</strong>, which allow for naming and manipulating compound objects</li>
+</ol>
+<p><img src="figures/blocks.jpg" width="40%" /></p>
+<p><img src="figures/blockstack.jpg" width="20%" /></p>
+<p><img src="figures/sanfran.jpg" width="40%" /></p>
+</div>
+</div>
+<div id="expressions" class="section level2" number="13.3">
+<h2><span class="header-section-number">A.3</span> Expressions</h2>
+</div>
+<div id="primitive-expressions" class="section level2" number="13.4">
+<h2><span class="header-section-number">A.4</span> Primitive Expressions</h2>
+<p><img src="figures/blocks.jpg" width="30%" /></p>
+<ul>
+<li><p>Everything in R is an object</p></li>
+<li><p>Primitive objects are the simplest elements of a programming language, and include:</p>
+<ul>
+<li><em>primitive data</em></li>
+<li><em>primitive functions</em></li>
+</ul></li>
+<li><p>They can be thought of as the basic building blocks for everything else in the language.</p></li>
+<li><p>An <strong>expression</strong> is an input that the programming language can evaluate, and consists of function and data objects.</p></li>
+</ul>
+</div>
+<div id="primitive-data-types" class="section level2" number="13.5">
+<h2><span class="header-section-number">A.5</span> Primitive Data Types:</h2>
+<p>Data objects are the primary means of storing information in R.
+R has a few basic <em>data types</em>:</p>
+<ul>
+<li><p><strong>Numeric</strong> -</p>
+<ul>
+<li><code>numeric</code>
+<ul>
+<li><code>int</code> - integers (<code>1,2</code>)</li>
+<li><code>num</code> - real number (<code>1.2, -3.1, 200.0</code>)</li>
+</ul></li>
+</ul></li>
+<li><p><strong>character</strong> or <strong>string</strong> -</p>
+<ul>
+<li><code>character</code>
+<ul>
+<li><code>"Hello world!"</code>, <code>"Ten"</code>, <code>'Cat'</code></li>
+<li><code>"This is a sentence, which is a string"</code></li>
+<li><code>"10"</code> ( in single or double quotes, as long as they match)</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Boolean</strong> or <strong>Logical</strong></p>
+<ul>
+<li><code>logical</code>
+<ul>
+<li><code>TRUE</code> or <code>FALSE</code> (use operators such as <em>or</em>, <em>and</em> and <em>not</em>).</li>
+<li>They will evaluate to numbers where <code>FALSE</code> evaluates to zero, and <code>TRUE</code> evaluates to one.</li>
+<li>For example. if you enter <code>TRUE + 1</code> you will get <code>2</code> in return.</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="RSPL.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(<span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="RSPL.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+</div>
+<div id="primitive-functions" class="section level2" number="13.6">
+<h2><span class="header-section-number">A.6</span> Primitive Functions</h2>
+<p>R uses functions to do all computations.</p>
+<div id="operators" class="section level3" number="13.6.1">
+<h3><span class="header-section-number">A.6.1</span> Operators</h3>
+<ul>
+<li>Arithmetic Operators
+<ul>
+<li>+, -, *, /, ^</li>
+</ul></li>
+<li>Comparison (also called Boolean, Logical or Predicate) Operators
+<ul>
+<li><code>&lt;, &gt;, ==, &lt;=, &gt;=, !=</code></li>
+<li>less than, greater than, equal to, less than or equal to, greater than or equal to, not equal to</li>
+<li>return <code>TRUE</code> or <code>FALSE</code></li>
+</ul></li>
+<li>Logical Operator
+<ul>
+<li><code>&amp;</code>, <code>|</code> ,<code>!</code></li>
+<li>also return <code>TRUE</code> or <code>FALSE</code></li>
+</ul></li>
+<li>Other functions
+<ul>
+<li><code>mode()</code></li>
+<li><code>length()</code></li>
+<li><code>sum()</code></li>
+<li><code>sqrt()</code></li>
+<li><code>log()</code></li>
+<li><code>exp()</code></li>
+</ul></li>
+<li>Assignment operators (assignment will be discussed below)
+<ul>
+<li><code>&lt;-</code> <strong>preferred assignment operator - always use this one</strong></li>
+<li><code>=</code> this will also work, but can be confusing (note different from <code>==</code>, the comparison operator)</li>
+<li><code>-&gt;</code> is also an assignment operator, but we will not use it.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="programming-languages-are-not-forgiving" class="section level2" number="13.7">
+<h2><span class="header-section-number">A.7</span> Programming Languages are Not Forgiving</h2>
+<div id="syntactically-valid-expressions" class="section level3" number="13.7.1">
+<h3><span class="header-section-number">A.7.1</span> Syntactically valid expressions</h3>
+<p>Expressions must be syntactically valid.</p>
+<ul>
+<li>syntax (form)
+<ul>
+<li>English: “cat dog boy” - not syntactically valid</li>
+<li>English: “cat hugs boy” - syntactically valid</li>
+</ul></li>
+<li>programming language:
+<ul>
+<li>“hi” 5 - not syntactically valid</li>
+<li>3.2*5 - syntactically valid</li>
+</ul></li>
+</ul>
+</div>
+<div id="semantically-valid-expressions" class="section level3" number="13.7.2">
+<h3><span class="header-section-number">A.7.2</span> Semantically valid expressions</h3>
+<ul>
+<li>semantics - (meaning)
+<ul>
+<li>English: “I are hungry” - syntactically valid but semantic error</li>
+<li>programming language:
+<ul>
+<li>3 + “hi” - semantic error (you can’t use addition on character strings)</li>
+</ul></li>
+</ul></li>
+<li>Chomsky:
+“colorless green ideas sleep furiously”</li>
+</ul>
+<p>This statement is syntactically valid, but does not make sense, so makes a semantic error.</p>
+</div>
+</div>
+<div id="assignment" class="section level2" number="13.8">
+<h2><span class="header-section-number">A.8</span> Assignment</h2>
+<p>We will often want to save data in a variable. We can do that with <strong>assignment</strong>, which utilizes an assignment operator.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="RSPL.html#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="RSPL.html#cb7-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="RSPL.html#cb9-1" aria-hidden="true" tabindex="-1"></a>pet <span class="ot">&lt;-</span> <span class="st">&quot;dog&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="RSPL.html#cb10-1" aria-hidden="true" tabindex="-1"></a>pet</span></code></pre></div>
+<pre><code>## [1] &quot;dog&quot;</code></pre>
+</div>
+<div id="combining-expressions" class="section level2" number="13.9">
+<h2><span class="header-section-number">A.9</span> Combining Expressions</h2>
+<p><img src="figures/blockstack.jpg" width="30%" /></p>
+</div>
+<div id="complex-data-types" class="section level2" number="13.10">
+<h2><span class="header-section-number">A.10</span> Complex Data Types</h2>
+<ul>
+<li>Scalars, Vectors, Matrices, and Arrays</li>
+<li>Lists</li>
+<li>Dataframes</li>
+</ul>
+</div>
+<div id="grouping-homogeneous-data-types" class="section level2" number="13.11">
+<h2><span class="header-section-number">A.11</span> Grouping Homogeneous Data Types</h2>
+<ul>
+<li>combining scalars</li>
+</ul>
+<pre><code>c()</code></pre>
+<ul>
+<li>combining expressions</li>
+</ul>
+<pre><code>{}</code></pre>
+<ul>
+<li>combining vectors</li>
+</ul>
+<pre><code>cbind()
+rbind()</code></pre>
+</div>
+<div id="complex-functions" class="section level2" number="13.12">
+<h2><span class="header-section-number">A.12</span> Complex Functions</h2>
+<ul>
+<li>Vectorization</li>
+<li>Nested Functions</li>
+<li>Loops and Conditional execution</li>
+</ul>
+<p>class: inverse, center, middle</p>
+</div>
+<div id="abstraction" class="section level2" number="13.13">
+<h2><span class="header-section-number">A.13</span> Abstraction</h2>
+</div>
+<div id="abstraction-1" class="section level2" number="13.14">
+<h2><span class="header-section-number">A.14</span> Abstraction</h2>
+<ul>
+<li>Assignment</li>
+<li></li>
+</ul>
+</div>
+<div id="data-abstraction" class="section level2" number="13.15">
+<h2><span class="header-section-number">A.15</span> Data Abstraction</h2>
+</div>
+<div id="functional-abstraction" class="section level2" number="13.16">
+<h2><span class="header-section-number">A.16</span> Functional Abstraction</h2>
+</div>
+<div id="anatomy-of-a-function" class="section level2" number="13.17">
+<h2><span class="header-section-number">A.17</span> Anatomy of a Function</h2>
+<pre><code>name &lt;- function(arg_1, arg_2, ...) expression</code></pre>
+</div>
+<div id="teaching-with-a-statistical-programming-language" class="section level2" number="13.18">
+<h2><span class="header-section-number">A.18</span> Teaching With A Statistical Programming Language</h2>
+<div id="an-example" class="section level3" number="13.18.1">
+<h3><span class="header-section-number">A.18.1</span> An Example</h3>
+</div>
+</div>
+<div id="mymean" class="section level2" number="13.19">
+<h2><span class="header-section-number">A.19</span> myMean</h2>
+</div>
+<div id="basic-elements-of-a-good-spl-1" class="section level2" number="13.20">
+<h2><span class="header-section-number">A.20</span> Basic Elements of a Good SPL</h2>
+<p>A rich set of <strong>primitive expressions</strong></p>
+<p><img src="figures/blocks.jpg" width="30%" /></p>
+<p>Mechanisms for <strong>combining expressions</strong> into more complex expressions</p>
+<p><img src="figures/blockstack.jpg" width="10%" /></p>
+<p>Means of <strong>abstraction</strong>, which allow for naming and manipulating compound objects</p>
+<p><img src="figures/sanfran.jpg" width="40%" /></p>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Judd, Charles M, Gary H McClelland, and Carey S Ryan. 2017. <em>Data Analysis: A Model Comparison Approach to Regression, ANOVA, and Beyond</em>. Routledge.
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="references.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["modelingBook.pdf", "modelingBook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

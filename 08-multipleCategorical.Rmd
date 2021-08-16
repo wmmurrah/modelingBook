@@ -1,0 +1,3 @@
+# Models with Multiple Categorical Predictors {#multicat}
+
+This chapter of the notebook corresponds to chapter 9 of @judd2017data.

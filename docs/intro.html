@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Introduction | Modeling in Education, and Social Sciences Using R</title>
+  <title>Chapter 1 Introduction to Simple Models | Modeling in Education, and Social Sciences Using R</title>
   <meta name="description" content="This book is aimed at helping social scientists learn modeling using R" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Introduction | Modeling in Education, and Social Sciences Using R" />
+  <meta property="og:title" content="Chapter 1 Introduction to Simple Models | Modeling in Education, and Social Sciences Using R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Introduction | Modeling in Education, and Social Sciences Using R" />
+  <meta name="twitter:title" content="Chapter 1 Introduction to Simple Models | Modeling in Education, and Social Sciences Using R" />
   
   <meta name="twitter:description" content="This book is aimed at helping social scientists learn modeling using R" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="William M. Murrah" />
 
 
-<meta name="date" content="2021-08-08" />
+<meta name="date" content="2021-08-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,8 +32,8 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="literature.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<link rel="next" href="sampdist.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -159,23 +159,57 @@ div.csl-indent {
 <li><a href="./">MESSuR</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
-<ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#outline-of-the-book"><i class="fa fa-check"></i><b>0.1</b> Outline of the Book</a></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#outline-of-the-book-1"><i class="fa fa-check"></i><b>1.1</b> Outline of the Book</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>2</b> Literature</a></li>
-<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a></li>
-<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
-<li class="chapter" data-level="4.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Simple Models</a></li>
+<li class="chapter" data-level="2" data-path="sampdist.html"><a href="sampdist.html"><i class="fa fa-check"></i><b>2</b> Sampling Distributions and Statistical Inference</a></li>
+<li class="chapter" data-level="3" data-path="simple.html"><a href="simple.html"><i class="fa fa-check"></i><b>3</b> Simple Regression</a></li>
+<li class="chapter" data-level="4" data-path="modeleval.html"><a href="modeleval.html"><i class="fa fa-check"></i><b>4</b> Model Evaluation</a></li>
+<li class="chapter" data-level="5" data-path="multiple.html"><a href="multiple.html"><i class="fa fa-check"></i><b>5</b> Models with Multiple Categorical Predictors</a></li>
+<li class="chapter" data-level="6" data-path="Interaction.html"><a href="Interaction.html"><i class="fa fa-check"></i><b>6</b> Moderation and Nonlinear Models</a></li>
+<li class="chapter" data-level="7" data-path="singlecat.html"><a href="singlecat.html"><i class="fa fa-check"></i><b>7</b> Models with Single Categorical Predictor</a></li>
+<li class="chapter" data-level="8" data-path="multicat.html"><a href="multicat.html"><i class="fa fa-check"></i><b>8</b> Models with Multiple Categorical Predictors</a></li>
+<li class="chapter" data-level="9" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>9</b> Models with Continuous and Categorical Predictors</a></li>
+<li class="chapter" data-level="10" data-path="nonindependent.html"><a href="nonindependent.html"><i class="fa fa-check"></i><b>10</b> Models with Nonindependent Errors</a></li>
+<li class="chapter" data-level="11" data-path="incorporating-predictors-with-nonindependent-data.html"><a href="incorporating-predictors-with-nonindependent-data.html"><i class="fa fa-check"></i><b>11</b> Incorporating Predictors with Nonindependent Data</a></li>
+<li class="chapter" data-level="12" data-path="logistic-models-for-categorical-dependent-variables.html"><a href="logistic-models-for-categorical-dependent-variables.html"><i class="fa fa-check"></i><b>12</b> Logistic Models for Categorical Dependent Variables</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="RSPL.html"><a href="RSPL.html"><i class="fa fa-check"></i><b>A</b> Appendix A: R as a Statistical Programming Language</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="RSPL.html"><a href="RSPL.html#overview"><i class="fa fa-check"></i><b>A.1</b> Overview</a></li>
+<li class="chapter" data-level="A.2" data-path="RSPL.html"><a href="RSPL.html#elements-of-statistical-programming"><i class="fa fa-check"></i><b>A.2</b> Elements of Statistical Programming</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="RSPL.html"><a href="RSPL.html#basic-elements-of-a-good-spl"><i class="fa fa-check"></i><b>A.2.1</b> Basic Elements of a Good SPL</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="RSPL.html"><a href="RSPL.html#expressions"><i class="fa fa-check"></i><b>A.3</b> Expressions</a></li>
+<li class="chapter" data-level="A.4" data-path="RSPL.html"><a href="RSPL.html#primitive-expressions"><i class="fa fa-check"></i><b>A.4</b> Primitive Expressions</a></li>
+<li class="chapter" data-level="A.5" data-path="RSPL.html"><a href="RSPL.html#primitive-data-types"><i class="fa fa-check"></i><b>A.5</b> Primitive Data Types:</a></li>
+<li class="chapter" data-level="A.6" data-path="RSPL.html"><a href="RSPL.html#primitive-functions"><i class="fa fa-check"></i><b>A.6</b> Primitive Functions</a>
+<ul>
+<li class="chapter" data-level="A.6.1" data-path="RSPL.html"><a href="RSPL.html#operators"><i class="fa fa-check"></i><b>A.6.1</b> Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="A.7" data-path="RSPL.html"><a href="RSPL.html#programming-languages-are-not-forgiving"><i class="fa fa-check"></i><b>A.7</b> Programming Languages are Not Forgiving</a>
+<ul>
+<li class="chapter" data-level="A.7.1" data-path="RSPL.html"><a href="RSPL.html#syntactically-valid-expressions"><i class="fa fa-check"></i><b>A.7.1</b> Syntactically valid expressions</a></li>
+<li class="chapter" data-level="A.7.2" data-path="RSPL.html"><a href="RSPL.html#semantically-valid-expressions"><i class="fa fa-check"></i><b>A.7.2</b> Semantically valid expressions</a></li>
+</ul></li>
+<li class="chapter" data-level="A.8" data-path="RSPL.html"><a href="RSPL.html#assignment"><i class="fa fa-check"></i><b>A.8</b> Assignment</a></li>
+<li class="chapter" data-level="A.9" data-path="RSPL.html"><a href="RSPL.html#combining-expressions"><i class="fa fa-check"></i><b>A.9</b> Combining Expressions</a></li>
+<li class="chapter" data-level="A.10" data-path="RSPL.html"><a href="RSPL.html#complex-data-types"><i class="fa fa-check"></i><b>A.10</b> Complex Data Types</a></li>
+<li class="chapter" data-level="A.11" data-path="RSPL.html"><a href="RSPL.html#grouping-homogeneous-data-types"><i class="fa fa-check"></i><b>A.11</b> Grouping Homogeneous Data Types</a></li>
+<li class="chapter" data-level="A.12" data-path="RSPL.html"><a href="RSPL.html#complex-functions"><i class="fa fa-check"></i><b>A.12</b> Complex Functions</a></li>
+<li class="chapter" data-level="A.13" data-path="RSPL.html"><a href="RSPL.html#abstraction"><i class="fa fa-check"></i><b>A.13</b> Abstraction</a></li>
+<li class="chapter" data-level="A.14" data-path="RSPL.html"><a href="RSPL.html#abstraction-1"><i class="fa fa-check"></i><b>A.14</b> Abstraction</a></li>
+<li class="chapter" data-level="A.15" data-path="RSPL.html"><a href="RSPL.html#data-abstraction"><i class="fa fa-check"></i><b>A.15</b> Data Abstraction</a></li>
+<li class="chapter" data-level="A.16" data-path="RSPL.html"><a href="RSPL.html#functional-abstraction"><i class="fa fa-check"></i><b>A.16</b> Functional Abstraction</a></li>
+<li class="chapter" data-level="A.17" data-path="RSPL.html"><a href="RSPL.html#anatomy-of-a-function"><i class="fa fa-check"></i><b>A.17</b> Anatomy of a Function</a></li>
+<li class="chapter" data-level="A.18" data-path="RSPL.html"><a href="RSPL.html#teaching-with-a-statistical-programming-language"><i class="fa fa-check"></i><b>A.18</b> Teaching With A Statistical Programming Language</a>
+<ul>
+<li class="chapter" data-level="A.18.1" data-path="RSPL.html"><a href="RSPL.html#an-example"><i class="fa fa-check"></i><b>A.18.1</b> An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="A.19" data-path="RSPL.html"><a href="RSPL.html#mymean"><i class="fa fa-check"></i><b>A.19</b> myMean</a></li>
+<li class="chapter" data-level="A.20" data-path="RSPL.html"><a href="RSPL.html#basic-elements-of-a-good-spl-1"><i class="fa fa-check"></i><b>A.20</b> Basic Elements of a Good SPL</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -197,189 +231,14 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="intro" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>You can label chapter and section titles using <code>{#label}</code> after them, e.g., we can reference Chapter <a href="intro.html#intro">1</a>. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter <a href="methods.html#methods">3</a>.</p>
-<p>Figures and tables with captions will be placed in <code>figure</code> and <code>table</code> environments, respectively.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
-<span id="cb1-2"><a href="intro.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:nice-fig"></span>
-<img src="modelingBook_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
-<p class="caption">
-Figure 1.1: Here is a nice figure!
-</p>
-</div>
-<p>Reference a figure by its code chunk label with the <code>fig:</code> prefix, e.g., see Figure <a href="intro.html#fig:nice-fig">1.1</a>. Similarly, you can reference tables generated from <code>knitr::kable()</code>, e.g., see Table <a href="intro.html#tab:nice-tab">1.1</a>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb2-2"><a href="intro.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(iris, <span class="dv">20</span>), <span class="at">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</span>
-<span id="cb2-3"><a href="intro.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
-<span id="cb2-4"><a href="intro.html#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<table>
-<caption><span id="tab:nice-tab">Table 1.1: </span>Here is a nice table!</caption>
-<thead>
-<tr class="header">
-<th align="right">Sepal.Length</th>
-<th align="right">Sepal.Width</th>
-<th align="right">Petal.Length</th>
-<th align="right">Petal.Width</th>
-<th align="left">Species</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">5.1</td>
-<td align="right">3.5</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.9</td>
-<td align="right">3.0</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.7</td>
-<td align="right">3.2</td>
-<td align="right">1.3</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.6</td>
-<td align="right">3.1</td>
-<td align="right">1.5</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.0</td>
-<td align="right">3.6</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.4</td>
-<td align="right">3.9</td>
-<td align="right">1.7</td>
-<td align="right">0.4</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.6</td>
-<td align="right">3.4</td>
-<td align="right">1.4</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.0</td>
-<td align="right">3.4</td>
-<td align="right">1.5</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.4</td>
-<td align="right">2.9</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.9</td>
-<td align="right">3.1</td>
-<td align="right">1.5</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.4</td>
-<td align="right">3.7</td>
-<td align="right">1.5</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.8</td>
-<td align="right">3.4</td>
-<td align="right">1.6</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.8</td>
-<td align="right">3.0</td>
-<td align="right">1.4</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.3</td>
-<td align="right">3.0</td>
-<td align="right">1.1</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.8</td>
-<td align="right">4.0</td>
-<td align="right">1.2</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.7</td>
-<td align="right">4.4</td>
-<td align="right">1.5</td>
-<td align="right">0.4</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.4</td>
-<td align="right">3.9</td>
-<td align="right">1.3</td>
-<td align="right">0.4</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.1</td>
-<td align="right">3.5</td>
-<td align="right">1.4</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">5.7</td>
-<td align="right">3.8</td>
-<td align="right">1.7</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.1</td>
-<td align="right">3.8</td>
-<td align="right">1.5</td>
-<td align="right">0.3</td>
-<td align="left">setosa</td>
-</tr>
-</tbody>
-</table>
-<p>You can write citations, too. For example, we are using the <strong>bookdown</strong> package <span class="citation">(<a href="#ref-R-bookdown" role="doc-biblioref">Xie 2021</a>)</span> in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span>.</p>
-<div id="outline-of-the-book-1" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Outline of the Book</h2>
+<h1><span class="header-section-number">Chapter 1</span> Introduction to Simple Models</h1>
+<p>This chapter of the notebook corresponds to chapters 1 and 2 of <span class="citation"><a href="#ref-judd2017data" role="doc-biblioref">Judd, McClelland, and Ryan</a> (<a href="#ref-judd2017data" role="doc-biblioref">2017</a>)</span>.</p>
 
-</div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-xie2015" class="csl-entry">
-Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
-</div>
-<div id="ref-R-bookdown" class="csl-entry">
-———. 2021. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
+<div id="ref-judd2017data" class="csl-entry">
+Judd, Charles M, Gary H McClelland, and Carey S Ryan. 2017. <em>Data Analysis: A Model Comparison Approach to Regression, ANOVA, and Beyond</em>. Routledge.
 </div>
 </div>
             </section>
@@ -388,7 +247,7 @@ Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd 
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="literature.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sampdist.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -24,6 +24,34 @@
             "type": "book"
         },
         {
+            "author": [
+                {
+                    "family": "Judd",
+                    "given": "Charles M"
+                },
+                {
+                    "family": "McClelland",
+                    "given": "Gary H"
+                },
+                {
+                    "family": "Ryan",
+                    "given": "Carey S"
+                }
+            ],
+            "id": "judd2017data",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher": "Routledge",
+            "title": "Data analysis: A model comparison approach to regression, ANOVA, and beyond",
+            "title-short": "Data analysis",
+            "type": "book"
+        },
+        {
             "URL": "https://www.R-project.org/",
             "author": [
                 {

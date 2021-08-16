@@ -117,7 +117,7 @@
 
 \title{Modeling in Education, and Social Sciences Using R}
 \author{William M. Murrah}
-\date{2021-08-08}
+\date{2021-08-16}
 
 \begin{document}
 \maketitle
@@ -130,121 +130,562 @@
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
-This is the preface.
-
-\hypertarget{outline-of-the-book}{%
-\section{Outline of the Book}\label{outline-of-the-book}}
-
-Section I Foundations of Modeling
-
-Chapter 1: Modeling and the Three Pillars of Science
-Chapter 2: Theoretical Models and Causal Graphs
-Chapter 3: Modeling and Computational Methods
-Chapter 4: R as a Statistical Programming Language for Statistical Thinking
-
-Section II General Linear Modeling
-
-Section III General Mixed-Effects Modeling
-
 \hypertarget{intro}{%
-\chapter{Introduction}\label{intro}}
+\chapter{Introduction to Simple Models}\label{intro}}
 
-You can label chapter and section titles using \texttt{\{\#label\}} after them, e.g., we can reference Chapter \ref{intro}. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \ref{methods}.
+This chapter of the notebook corresponds to chapters 1 and 2 of \citet{judd2017data}.
 
-Figures and tables with captions will be placed in \texttt{figure} and \texttt{table} environments, respectively.
+\hypertarget{sampdist}{%
+\chapter{Sampling Distributions and Statistical Inference}\label{sampdist}}
+
+This chapter of the notebook corresponds to chapters 3 and 4 of \citet{judd2017data}.
+
+\hypertarget{simple}{%
+\chapter{Simple Regression}\label{simple}}
+
+This chapter of the notebook corresponds to chapter 5 of \citet{judd2017data}.
+
+\hypertarget{modeleval}{%
+\chapter{Model Evaluation}\label{modeleval}}
+
+This chapter of the notebook corresponds to Chapter 13 of \citet{judd2017data}.
+
+\hypertarget{multiple}{%
+\chapter{Models with Multiple Categorical Predictors}\label{multiple}}
+
+This chapter of the notebook corresponds to chapter 6 of \citet{judd2017data}.
+
+\hypertarget{Interaction}{%
+\chapter{Moderation and Nonlinear Models}\label{Interaction}}
+
+This chapter of the notebook corresponds to chapter 7 of \citet{judd2017data}.
+
+\hypertarget{singlecat}{%
+\chapter{Models with Single Categorical Predictor}\label{singlecat}}
+
+This chapter of the notebook corresponds to chapter 8 of \citet{judd2017data}.
+
+\hypertarget{multicat}{%
+\chapter{Models with Multiple Categorical Predictors}\label{multicat}}
+
+This chapter of the notebook corresponds to chapter 9 of \citet{judd2017data}.
+
+\hypertarget{ancova}{%
+\chapter{Models with Continuous and Categorical Predictors}\label{ancova}}
+
+This chapter of the notebook corresponds to chapter 10 of \citet{judd2017data}.
+
+\hypertarget{nonindependent}{%
+\chapter{Models with Nonindependent Errors}\label{nonindependent}}
+
+This chapter of the notebook corresponds to chapter 11 of \citet{judd2017data}.
+
+\hypertarget{incorporating-predictors-with-nonindependent-data}{%
+\chapter{Incorporating Predictors with Nonindependent Data}\label{incorporating-predictors-with-nonindependent-data}}
+
+This chapter of the notebook corresponds to chapter 12 of \citet{judd2017data}.
+
+\hypertarget{logistic-models-for-categorical-dependent-variables}{%
+\chapter{Logistic Models for Categorical Dependent Variables}\label{logistic-models-for-categorical-dependent-variables}}
+
+This chapter of the notebook corresponds to chapter 14 of \citet{judd2017data}.
+
+\hypertarget{appendix-appendices}{%
+\appendix}
+
+
+\hypertarget{RSPL}{%
+\chapter{Appendix A: R as a Statistical Programming Language}\label{RSPL}}
+
+\hypertarget{overview}{%
+\section{Overview}\label{overview}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
-\FunctionTok{plot}\NormalTok{(pressure, }\AttributeTok{type =} \StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(knitr)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
+\begin{itemize}
+\tightlist
+\item
+  Why use Statistical Programming Languages?
+\end{itemize}
 
-{\centering \includegraphics[width=0.8\linewidth]{modelingBook_files/figure-latex/nice-fig-1} 
+Computers and Programs
 
-}
+\begin{itemize}
+\tightlist
+\item
+  Fixed program computer
 
-\caption{Here is a nice figure!}\label{fig:nice-fig}
-\end{figure}
+  \begin{itemize}
+  \tightlist
+  \item
+    programs are ``hard-wired'' into computer
+  \item
+    calculator, stopwatch
+  \end{itemize}
+\item
+  Stored program computer
 
-Reference a figure by its code chunk label with the \texttt{fig:} prefix, e.g., see Figure \ref{fig:nice-fig}. Similarly, you can reference tables generated from \texttt{knitr::kable()}, e.g., see Table \ref{tab:nice-tab}.
+  \begin{itemize}
+  \tightlist
+  \item
+    machine stores and executes instructions
+  \item
+    most modern computers, your phone, etc.
+  \end{itemize}
+\end{itemize}
+
+Statistical Programs versus Statistical Programming Language
+
+\begin{itemize}
+\tightlist
+\item
+  Statistical Programs
+
+  \begin{itemize}
+  \tightlist
+  \item
+    fixed menus
+  \item
+    limited procedures (at least in the menus)
+  \item
+    leads to compartmentalizing models (e.g.~ANOVA, regression, GLM)
+  \end{itemize}
+\item
+  Statistical Programming Languages (SPLs)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Turing complete: if you can create an algorithm you can program it
+  \item
+    Very flexible
+  \item
+    Integration of models: One model to rule them all!
+  \end{itemize}
+\end{itemize}
+
+Everythin
+
+\hypertarget{elements-of-statistical-programming}{%
+\section{Elements of Statistical Programming}\label{elements-of-statistical-programming}}
+
+\hypertarget{basic-elements-of-a-good-spl}{%
+\subsection{Basic Elements of a Good SPL}\label{basic-elements-of-a-good-spl}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  a rich set of \textbf{primitive expressions}
+\item
+  mechanisms for \textbf{combining expressions} into more complex expressions
+\item
+  means of \textbf{abstraction}, which allow for naming and manipulating compound objects
+\end{enumerate}
+
+\includegraphics[width=0.4\linewidth]{figures/blocks}
+
+\includegraphics[width=0.2\linewidth]{figures/blockstack}
+
+\includegraphics[width=0.4\linewidth]{figures/sanfran}
+
+\hypertarget{expressions}{%
+\section{Expressions}\label{expressions}}
+
+\hypertarget{primitive-expressions}{%
+\section{Primitive Expressions}\label{primitive-expressions}}
+
+\includegraphics[width=0.3\linewidth]{figures/blocks}
+
+\begin{itemize}
+\item
+  Everything in R is an object
+\item
+  Primitive objects are the simplest elements of a programming language, and include:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{primitive data}
+  \item
+    \emph{primitive functions}
+  \end{itemize}
+\item
+  They can be thought of as the basic building blocks for everything else in the language.
+\item
+  An \textbf{expression} is an input that the programming language can evaluate, and consists of function and data objects.
+\end{itemize}
+
+\hypertarget{primitive-data-types}{%
+\section{Primitive Data Types:}\label{primitive-data-types}}
+
+Data objects are the primary means of storing information in R.
+R has a few basic \emph{data types}:
+
+\begin{itemize}
+\item
+  \textbf{Numeric} -
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{numeric}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \texttt{int} - integers (\texttt{1,2})
+    \item
+      \texttt{num} - real number (\texttt{1.2,\ -3.1,\ 200.0})
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{character} or \textbf{string} -
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{character}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \texttt{"Hello\ world!"}, \texttt{"Ten"}, \texttt{\textquotesingle{}Cat\textquotesingle{}}
+    \item
+      \texttt{"This\ is\ a\ sentence,\ which\ is\ a\ string"}
+    \item
+      \texttt{"10"} ( in single or double quotes, as long as they match)
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Boolean} or \textbf{Logical}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{logical}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \texttt{TRUE} or \texttt{FALSE} (use operators such as \emph{or}, \emph{and} and \emph{not}).
+    \item
+      They will evaluate to numbers where \texttt{FALSE} evaluates to zero, and \texttt{TRUE} evaluates to one.
+    \item
+      For example. if you enter \texttt{TRUE\ +\ 1} you will get \texttt{2} in return.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
-  \FunctionTok{head}\NormalTok{(iris, }\DecValTok{20}\NormalTok{), }\AttributeTok{caption =} \StringTok{\textquotesingle{}Here is a nice table!\textquotesingle{}}\NormalTok{,}
-  \AttributeTok{booktabs =} \ConstantTok{TRUE}
-\NormalTok{)}
+\FunctionTok{mode}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{table}
+\begin{verbatim}
+## [1] "logical"
+\end{verbatim}
 
-\caption{\label{tab:nice-tab}Here is a nice table!}
-\centering
-\begin{tabular}[t]{rrrrl}
-\toprule
-Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
-\midrule
-5.1 & 3.5 & 1.4 & 0.2 & setosa\\
-4.9 & 3.0 & 1.4 & 0.2 & setosa\\
-4.7 & 3.2 & 1.3 & 0.2 & setosa\\
-4.6 & 3.1 & 1.5 & 0.2 & setosa\\
-5.0 & 3.6 & 1.4 & 0.2 & setosa\\
-\addlinespace
-5.4 & 3.9 & 1.7 & 0.4 & setosa\\
-4.6 & 3.4 & 1.4 & 0.3 & setosa\\
-5.0 & 3.4 & 1.5 & 0.2 & setosa\\
-4.4 & 2.9 & 1.4 & 0.2 & setosa\\
-4.9 & 3.1 & 1.5 & 0.1 & setosa\\
-\addlinespace
-5.4 & 3.7 & 1.5 & 0.2 & setosa\\
-4.8 & 3.4 & 1.6 & 0.2 & setosa\\
-4.8 & 3.0 & 1.4 & 0.1 & setosa\\
-4.3 & 3.0 & 1.1 & 0.1 & setosa\\
-5.8 & 4.0 & 1.2 & 0.2 & setosa\\
-\addlinespace
-5.7 & 4.4 & 1.5 & 0.4 & setosa\\
-5.4 & 3.9 & 1.3 & 0.4 & setosa\\
-5.1 & 3.5 & 1.4 & 0.3 & setosa\\
-5.7 & 3.8 & 1.7 & 0.3 & setosa\\
-5.1 & 3.8 & 1.5 & 0.3 & setosa\\
-\bottomrule
-\end{tabular}
-\end{table}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ConstantTok{TRUE} \SpecialCharTok{+} \DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
 
-You can write citations, too. For example, we are using the \textbf{bookdown} package \citep{R-bookdown} in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
 
-\hypertarget{outline-of-the-book-1}{%
-\section{Outline of the Book}\label{outline-of-the-book-1}}
+\hypertarget{primitive-functions}{%
+\section{Primitive Functions}\label{primitive-functions}}
 
-\hypertarget{literature}{%
-\chapter{Literature}\label{literature}}
+R uses functions to do all computations.
 
-Here is a review of existing methods.
+\hypertarget{operators}{%
+\subsection{Operators}\label{operators}}
 
-\hypertarget{methods}{%
-\chapter{Methods}\label{methods}}
+\begin{itemize}
+\tightlist
+\item
+  Arithmetic Operators
 
-We describe our methods in this chapter.
+  \begin{itemize}
+  \tightlist
+  \item
+    +, -, *, /, \^{}
+  \end{itemize}
+\item
+  Comparison (also called Boolean, Logical or Predicate) Operators
 
-\hypertarget{applications}{%
-\chapter{Applications}\label{applications}}
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{\textless{},\ \textgreater{},\ ==,\ \textless{}=,\ \textgreater{}=,\ !=}
+  \item
+    less than, greater than, equal to, less than or equal to, greater than or equal to, not equal to
+  \item
+    return \texttt{TRUE} or \texttt{FALSE}
+  \end{itemize}
+\item
+  Logical Operator
 
-Some \emph{significant} applications are demonstrated in this chapter.
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{\&}, \texttt{\textbar{}} ,\texttt{!}
+  \item
+    also return \texttt{TRUE} or \texttt{FALSE}
+  \end{itemize}
+\item
+  Other functions
 
-\hypertarget{example-one}{%
-\section{Example one}\label{example-one}}
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{mode()}
+  \item
+    \texttt{length()}
+  \item
+    \texttt{sum()}
+  \item
+    \texttt{sqrt()}
+  \item
+    \texttt{log()}
+  \item
+    \texttt{exp()}
+  \end{itemize}
+\item
+  Assignment operators (assignment will be discussed below)
 
-\hypertarget{example-two}{%
-\section{Example two}\label{example-two}}
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{\textless{}-} \textbf{preferred assignment operator - always use this one}
+  \item
+    \texttt{=} this will also work, but can be confusing (note different from \texttt{==}, the comparison operator)
+  \item
+    \texttt{-\textgreater{}} is also an assignment operator, but we will not use it.
+  \end{itemize}
+\end{itemize}
 
-\hypertarget{final-words}{%
-\chapter{Final Words}\label{final-words}}
+\hypertarget{programming-languages-are-not-forgiving}{%
+\section{Programming Languages are Not Forgiving}\label{programming-languages-are-not-forgiving}}
 
-We have finished a nice book.
+\hypertarget{syntactically-valid-expressions}{%
+\subsection{Syntactically valid expressions}\label{syntactically-valid-expressions}}
+
+Expressions must be syntactically valid.
+
+\begin{itemize}
+\tightlist
+\item
+  syntax (form)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    English: ``cat dog boy'' - not syntactically valid
+  \item
+    English: ``cat hugs boy'' - syntactically valid
+  \end{itemize}
+\item
+  programming language:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``hi'' 5 - not syntactically valid
+  \item
+    3.2*5 - syntactically valid
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{semantically-valid-expressions}{%
+\subsection{Semantically valid expressions}\label{semantically-valid-expressions}}
+
+\begin{itemize}
+\tightlist
+\item
+  semantics - (meaning)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    English: ``I are hungry'' - syntactically valid but semantic error
+  \item
+    programming language:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      3 + ``hi'' - semantic error (you can't use addition on character strings)
+    \end{itemize}
+  \end{itemize}
+\item
+  Chomsky:
+  ``colorless green ideas sleep furiously''
+\end{itemize}
+
+This statement is syntactically valid, but does not make sense, so makes a semantic error.
+
+\hypertarget{assignment}{%
+\section{Assignment}\label{assignment}}
+
+We will often want to save data in a variable. We can do that with \textbf{assignment}, which utilizes an assignment operator.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pet }\OtherTok{\textless{}{-}} \StringTok{"dog"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pet}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "dog"
+\end{verbatim}
+
+\hypertarget{combining-expressions}{%
+\section{Combining Expressions}\label{combining-expressions}}
+
+\includegraphics[width=0.3\linewidth]{figures/blockstack}
+
+\hypertarget{complex-data-types}{%
+\section{Complex Data Types}\label{complex-data-types}}
+
+\begin{itemize}
+\tightlist
+\item
+  Scalars, Vectors, Matrices, and Arrays
+\item
+  Lists
+\item
+  Dataframes
+\end{itemize}
+
+\hypertarget{grouping-homogeneous-data-types}{%
+\section{Grouping Homogeneous Data Types}\label{grouping-homogeneous-data-types}}
+
+\begin{itemize}
+\tightlist
+\item
+  combining scalars
+\end{itemize}
+
+\begin{verbatim}
+c()
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  combining expressions
+\end{itemize}
+
+\begin{verbatim}
+{}
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  combining vectors
+\end{itemize}
+
+\begin{verbatim}
+cbind()
+rbind()
+\end{verbatim}
+
+\hypertarget{complex-functions}{%
+\section{Complex Functions}\label{complex-functions}}
+
+\begin{itemize}
+\tightlist
+\item
+  Vectorization
+\item
+  Nested Functions
+\item
+  Loops and Conditional execution
+\end{itemize}
+
+class: inverse, center, middle
+
+\hypertarget{abstraction}{%
+\section{Abstraction}\label{abstraction}}
+
+\hypertarget{abstraction-1}{%
+\section{Abstraction}\label{abstraction-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Assignment
+\item
+\end{itemize}
+
+\hypertarget{data-abstraction}{%
+\section{Data Abstraction}\label{data-abstraction}}
+
+\hypertarget{functional-abstraction}{%
+\section{Functional Abstraction}\label{functional-abstraction}}
+
+\hypertarget{anatomy-of-a-function}{%
+\section{Anatomy of a Function}\label{anatomy-of-a-function}}
+
+\begin{verbatim}
+name <- function(arg_1, arg_2, ...) expression
+\end{verbatim}
+
+\hypertarget{teaching-with-a-statistical-programming-language}{%
+\section{Teaching With A Statistical Programming Language}\label{teaching-with-a-statistical-programming-language}}
+
+\hypertarget{an-example}{%
+\subsection{An Example}\label{an-example}}
+
+\hypertarget{mymean}{%
+\section{myMean}\label{mymean}}
+
+\hypertarget{basic-elements-of-a-good-spl-1}{%
+\section{Basic Elements of a Good SPL}\label{basic-elements-of-a-good-spl-1}}
+
+A rich set of \textbf{primitive expressions}
+
+\includegraphics[width=0.3\linewidth]{figures/blocks}
+
+Mechanisms for \textbf{combining expressions} into more complex expressions
+
+\includegraphics[width=0.1\linewidth]{figures/blockstack}
+
+Means of \textbf{abstraction}, which allow for naming and manipulating compound objects
+
+\includegraphics[width=0.4\linewidth]{figures/sanfran}
 
   \bibliography{book.bib,packages.bib}
 
